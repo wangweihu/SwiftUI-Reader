@@ -8,32 +8,53 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @State private var value = 0
-    
-    // @AppStorage() 强大之处 UserDefaults
-    // 当值更改时，它将自动重新调用视图的body属性
-    // 如果该键更改，将刷新您的UI
-    @AppStorage("isDarkMode")
-    private var isDarkMode : Bool = false
-    
+    @State var results = [Ranking]()
+
     var body: some View {
-        VStack {
-            Text("ContentView count number")
-            Text("\(value)")
-            Button("Increment ContentView value") {
-                value += 1
+        NavigationView {
+            List(results, id: \._id) { item in
+                NavigationLink(destination: RankingDetailView(id: item._id), label: {
+                    VStack(alignment: .leading) {
+                        Text(item.title)
+                            .font(.headline)
+                        Text(item.cover)
+                    }
+                })
             }
-            CounterView()
-            
-            VStack {
-                Text(isDarkMode ? "DARK" : "LIGHT")
-                Toggle(isOn: $isDarkMode) {
-                    Text("Select mode")
-                }.fixedSize()
-            }.padding()
-            .background(Color.yellow)
-        }.padding()
-        .background(Color.green)
+            .onAppear(perform: loadData)
+            .navigationTitle("Profile")
+        }
     }
 }
 
+extension ProfileView {
+    func loadData() {
+        let urlString = "http://api.zhuishushenqi.com/ranking/"
+        guard let url = URL(string: urlString) else {
+            fatalError("The url is vaild \(urlString)")
+        }
+
+        let request = URLRequest(url: url)
+
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            guard let data = data else {
+                print("No data in response: \(error?.localizedDescription ?? "Unknown error").")
+                return
+            }
+            if let decodedResponse = try? JSONDecoder().decode(Response.self, from: data) {
+                DispatchQueue.main.async {
+                    // update our UI
+                    self.results = decodedResponse.rankings
+                }
+            } else {
+                print("Invalid response from server")
+            }
+        }.resume()
+    }
+}
+
+struct ProfileView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProfileView()
+    }
+}
