@@ -30,8 +30,8 @@ struct RankingDetailView: View {
 extension RankingDetailView {
     func loadData() {
         var urlString = "http://api.zhuishushenqi.com/ranking/"
-        urlString.append(self.id)
-        
+        urlString.append(id)
+
         guard let url = URL(string: urlString) else {
             fatalError("The url is vaild \(urlString)")
         }

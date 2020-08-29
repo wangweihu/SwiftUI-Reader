@@ -11,7 +11,7 @@ import SwiftUI
 struct ProgressViewDemo: View {
     @State private var downloadAmount = 0.0
     let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
- 
+
     var body: some View {
         VStack {
             // 使用ProgressView显示任务的进度

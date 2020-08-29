@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		662E54DA24EFD52500CCBA26 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 662E54D824EFD52000CCBA26 /* CloudKit.framework */; };
+		662E54DB24EFD52500CCBA26 /* CloudKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 662E54D824EFD52000CCBA26 /* CloudKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6670C9FD24D92A9500DC96D3 /* WWHReaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6670C9FC24D92A9500DC96D3 /* WWHReaderApp.swift */; };
 		6670C9FF24D92A9500DC96D3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6670C9FE24D92A9500DC96D3 /* ContentView.swift */; };
 		6670CA0124D92A9600DC96D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6670CA0024D92A9600DC96D3 /* Assets.xcassets */; };
 		6670CA0424D92A9600DC96D3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6670CA0324D92A9600DC96D3 /* Preview Assets.xcassets */; };
 		6670CA0C24D9331200DC96D3 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6670CA0B24D9331200DC96D3 /* AppModel.swift */; };
+		6679AA5124EFAA1A002B6EE0 /* WWHDBModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6679AA4F24EFAA1A002B6EE0 /* WWHDBModel.xcdatamodeld */; };
+		6679AA5324EFAA91002B6EE0 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6679AA5224EFAA91002B6EE0 /* Store.swift */; };
 		6685EC9B24DC072B003001A2 /* ProgressViewDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6685EC9A24DC072B003001A2 /* ProgressViewDemo.swift */; };
 		6685EC9D24DC08F1003001A2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6685EC9C24DC08F1003001A2 /* HomeView.swift */; };
 		6685EC9F24DC092A003001A2 /* RecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6685EC9E24DC092A003001A2 /* RecommendView.swift */; };
@@ -29,6 +33,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				662E54DB24EFD52500CCBA26 /* CloudKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -36,6 +41,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		662E54D824EFD52000CCBA26 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		6670C9F924D92A9500DC96D3 /* WWHReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WWHReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6670C9FC24D92A9500DC96D3 /* WWHReaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWHReaderApp.swift; sourceTree = "<group>"; };
 		6670C9FE24D92A9500DC96D3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,6 +49,8 @@
 		6670CA0324D92A9600DC96D3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6670CA0524D92A9600DC96D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6670CA0B24D9331200DC96D3 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		6679AA5024EFAA1A002B6EE0 /* WWHDBModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WWHDBModel.xcdatamodel; sourceTree = "<group>"; };
+		6679AA5224EFAA91002B6EE0 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		6685EC9A24DC072B003001A2 /* ProgressViewDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewDemo.swift; sourceTree = "<group>"; };
 		6685EC9C24DC08F1003001A2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		6685EC9E24DC092A003001A2 /* RecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendView.swift; sourceTree = "<group>"; };
@@ -59,17 +67,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				662E54DA24EFD52500CCBA26 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		662E54D724EFD52000CCBA26 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				662E54D824EFD52000CCBA26 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6670C9F024D92A9400DC96D3 = {
 			isa = PBXGroup;
 			children = (
 				6670C9FB24D92A9500DC96D3 /* WWHReader */,
 				6670C9FA24D92A9500DC96D3 /* Products */,
+				662E54D724EFD52000CCBA26 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,9 +102,11 @@
 		6670C9FB24D92A9500DC96D3 /* WWHReader */ = {
 			isa = PBXGroup;
 			children = (
+				6679AA4F24EFAA1A002B6EE0 /* WWHDBModel.xcdatamodeld */,
 				66A2097A24DAABE8002C9674 /* WWHReader.entitlements */,
 				6670CA0B24D9331200DC96D3 /* AppModel.swift */,
 				6670C9FC24D92A9500DC96D3 /* WWHReaderApp.swift */,
+				6679AA5224EFAA91002B6EE0 /* Store.swift */,
 				6670C9FE24D92A9500DC96D3 /* ContentView.swift */,
 				6670CA0024D92A9600DC96D3 /* Assets.xcassets */,
 				6670CA0524D92A9600DC96D3 /* Info.plist */,
@@ -191,12 +211,14 @@
 				6685ECA324DC097B003001A2 /* ProfileView.swift in Sources */,
 				6670C9FF24D92A9500DC96D3 /* ContentView.swift in Sources */,
 				6685ECA124DC094B003001A2 /* DeskView.swift in Sources */,
+				6679AA5324EFAA91002B6EE0 /* Store.swift in Sources */,
 				6685EC9F24DC092A003001A2 /* RecommendView.swift in Sources */,
 				6685EC9B24DC072B003001A2 /* ProgressViewDemo.swift in Sources */,
 				6670CA0C24D9331200DC96D3 /* AppModel.swift in Sources */,
 				6685EC9D24DC08F1003001A2 /* HomeView.swift in Sources */,
 				66FA7FBD24E2B147000450F9 /* Ranking.swift in Sources */,
 				66FA7FBF24E2B849000450F9 /* RankingDetailView.swift in Sources */,
+				6679AA5124EFAA1A002B6EE0 /* WWHDBModel.xcdatamodeld in Sources */,
 				6670C9FD24D92A9500DC96D3 /* WWHReaderApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,7 +358,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wangweihu.Moonshot;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangweihu.;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
@@ -350,6 +372,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = WWHReader/WWHReader.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"WWHReader/Preview Content\"";
 				DEVELOPMENT_TEAM = 9PAC8ZMGT5;
@@ -360,8 +383,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wangweihu.Moonshot;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangweihu.;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -409,6 +433,19 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCVersionGroup section */
+		6679AA4F24EFAA1A002B6EE0 /* WWHDBModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6679AA5024EFAA1A002B6EE0 /* WWHDBModel.xcdatamodel */,
+			);
+			currentVersion = 6679AA5024EFAA1A002B6EE0 /* WWHDBModel.xcdatamodel */;
+			path = WWHDBModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6670C9F124D92A9400DC96D3 /* Project object */;
 }
